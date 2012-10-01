@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">
+        <html>
+  <head>
+   </head>
+   <body style="text-align:justify;color:gray;background-color:black;">Broken Social Scene is a Canadian indie rock band,a musical collective including as few as six and as many as nineteen members,formed in 1999 by Kevin Drew and Brendan Canning.Most of its members currently play in various other groups and solo project
+ </body>
+</html></string>
+    <string name="app_name">Smart Campus</string>
+   
+</resources>
