@@ -3,26 +3,26 @@
     android:id="@+id/main_rlayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
- android:background="@drawable/scbg"
-     
+  android:background="@drawable/scbg"
+  android:layout_gravity="center"
     android:orientation="vertical" >
 
 
     
-<RelativeLayout
+<RelativeLayout 
     android:id="@+id/rlayout"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="fill_parent"
  
     android:orientation="vertical" >
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="wrap_content"
+        android:layout_width="520dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="40dp"
         android:src="@drawable/spicon3" />
 
     <ImageView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/icon"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginTop="160dp"
         android:src="@drawable/spbroken" />
 
@@ -80,7 +80,7 @@
 
     <TextView
         android:id="@+id/fb_text"
-        android:layout_width="260dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/fb"
         android:layout_below="@+id/fb"
@@ -168,7 +168,7 @@
         android:layout_height="50dp"
        
        android:layout_marginTop="190dp"
-       android:layout_marginLeft="150dp"
+       android:layout_marginLeft="220dp"
         android:layout_toRightOf="@+id/textView1"
         android:src="@drawable/da" />
     <ImageView
@@ -177,16 +177,16 @@
         android:layout_height="50dp"
        
          android:layout_marginTop="190dp"
-         android:layout_marginLeft="150dp"
+         android:layout_marginLeft="220dp"
         android:layout_toRightOf="@+id/textView1"
         android:src="@drawable/at" />
 
     <ImageView
         android:id="@+id/map"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-         android:layout_marginLeft="165dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="277dp"
+         android:layout_marginLeft="230dp"
        
         android:layout_toRightOf="@+id/textView1"
         android:src="@drawable/icon1" />
@@ -205,7 +205,7 @@
         android:id="@+id/more"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="220dp"
         android:layout_alignTop="@+id/textView1"
         android:layout_toRightOf="@+id/textView1"
         android:src="@drawable/da" />
@@ -213,7 +213,7 @@
         android:id="@+id/click_more"
         android:layout_width="50dp"
         android:layout_height="50dp"
-       android:layout_marginLeft="150dp"
+       android:layout_marginLeft="220dp"
         android:layout_alignTop="@+id/textView1"
         android:layout_toRightOf="@+id/textView1"
         android:src="@drawable/at" />
@@ -248,7 +248,7 @@
         android:id="@+id/ra"
         android:layout_width="50dp"
         android:layout_height="50dp"
-      android:layout_marginLeft="150dp"
+      android:layout_marginLeft="220dp"
         android:layout_marginTop="410dp"
         android:layout_toRightOf="@+id/textView1"
         android:src="@drawable/da" />
@@ -256,22 +256,25 @@
         android:id="@+id/cra"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="220dp"
         android:layout_marginTop="410dp"
         android:layout_toRightOf="@+id/textView1"
         android:src="@drawable/at" />
       <View  android:id="@+id/view1"
-        android:layout_width="530dp"
+        android:layout_width="510dp"
         android:layout_height="1dp"
+         android:layout_marginLeft="40dp"
         android:layout_marginTop="255dp"
         android:background="#666666"/>
       <View  android:id="@+id/view2"
-        android:layout_width="530dp"
+        android:layout_width="511dp"
         android:layout_height="1dp"
+         android:layout_marginLeft="40dp"
         android:layout_marginTop="310dp"
         android:background="#666666"/>
       <View  android:id="@+id/view3"
-        android:layout_width="530dp"
+        android:layout_width="510dp"
+        android:layout_marginLeft="40dp"
         android:layout_height="1dp"
         android:layout_marginTop="400dp"
         android:background="#666666"/>

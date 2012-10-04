@@ -10,16 +10,16 @@
             <RelativeLayout  
                 android:id="@+id/rlayout"
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
+                android:layout_height="600dp"
                 android:orientation="vertical"
                  >
                 <ImageView
                     android:id="@+id/icon"
-                    android:layout_width="320dp"
-                    android:layout_height="100dp"
+                    android:layout_width="340dp"
+                    android:layout_height="150dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="10dp"
                     android:src="@drawable/spicon3" />
 
                 <ImageView
@@ -28,8 +28,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignTop="@+id/icon"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="125dp"
                     android:src="@drawable/spbroken" />
 
                 <TextView
@@ -38,11 +38,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/icon"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
+                   
                     android:layout_toRightOf="@+id/br"
                     android:text="TextView"
                     android:textColor="#000000"
-                    android:textSize="12dp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/broken_text"
@@ -53,7 +53,7 @@
                     android:layout_marginTop="5dp"
                     android:text="TextView"
                     android:textColor="#000000"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
 
                 <ImageView
                     android:id="@+id/imageView1"
@@ -61,9 +61,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/br"
                     android:layout_below="@+id/br"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:src="@drawable/fbicon" />
+                    
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/fbicon_big" />
 
                 <TextView
                     android:id="@+id/fb"
@@ -73,17 +73,17 @@
                     android:layout_alignTop="@+id/imageView1"
                     android:text="TextView"
                     android:textColor="#000000"
-                    android:textSize="12dp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/fb_text"
-                    android:layout_width="160dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/fb"
                     android:layout_below="@+id/fb"
                     android:text="TextView"
                     android:textColor="#000000"
-                    android:textSize="10dp" />
+                    android:textSize="14dp" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -91,8 +91,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/imageView1"
                     android:layout_below="@+id/imageView1"
-                    android:layout_marginTop="32dp"
-                    android:src="@drawable/rsvpicon" />
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/rsvpicon_big" />
 
                 <TextView
                     android:id="@+id/rsvp"
@@ -103,7 +103,7 @@
                     android:layout_marginTop="25dp"
                     android:text="TextView"
                     android:textColor="#000000"
-                    android:textSize="12dp" />
+                    android:textSize="18dp" />
 
                 <ImageView
                     android:id="@+id/imageView5"
@@ -118,11 +118,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/imageView5"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="1dp"
                     android:layout_toRightOf="@+id/imageView5"
                     android:text="You Are Going"
                     android:textColor="#333333"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/fg"
@@ -132,7 +132,7 @@
                     android:layout_below="@+id/imageView4"
                     android:text="Friends Going:"
                     android:textColor="#000000"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/bss"
@@ -141,48 +141,49 @@
                     android:layout_alignLeft="@+id/fg"
                     android:layout_below="@+id/ad"
                     android:textColor="#333333"
-                    android:textSize="12dp" />
+                    android:textSize="15dp" 
+                    />
 
                 <ScrollView
                     android:id="@+id/l2"
-                    android:layout_width="200dp"
-                    android:layout_height="120dp"
+                    android:layout_width="260dp"
+                    android:layout_height="110dp"
                     android:layout_alignLeft="@+id/bss"
                     android:layout_below="@+id/bss" >
 
                     <TextView
                         android:id="@+id/bsstext"
-                        android:layout_width="200dp"
-                        android:layout_height="120dp"
+                        android:layout_width="260dp"
+                        android:layout_height="110dp"
                         android:textColor="#000000"
-                        android:textSize="10dp" />
+                        android:textSize="15dp" />
                 </ScrollView>
 
                 <ImageView
                     android:id="@+id/downarrow"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="140dp"
                     android:layout_toRightOf="@+id/textView1"
                     android:src="@drawable/da" />
 
                 <ImageView
                     android:id="@+id/click_downarrow"
-                    android:layout_width="40dp"
+                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="140dp"
                     android:layout_toRightOf="@+id/textView1"
                     android:src="@drawable/at" />
 
                 <ImageView
                     android:id="@+id/map"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                 
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="195dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                   
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="248dp"
                     android:layout_toRightOf="@+id/textView1"
                     android:src="@drawable/icon1" />
 
@@ -191,17 +192,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView1"
-                    android:layout_marginLeft="200dp"
+                    android:layout_marginLeft="240dp"
                     android:text="See More"
                     android:textColor="#333333"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
 
                 <ImageView
                     android:id="@+id/more"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignTop="@+id/textView1"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
                     android:layout_toRightOf="@+id/textView1"
                     android:src="@drawable/da" />
 
@@ -210,7 +212,8 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignTop="@+id/textView1"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
                     android:layout_toRightOf="@+id/textView1"
                     android:src="@drawable/at" />
 
@@ -219,7 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/fg"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_toRightOf="@+id/imageView5"
                     android:src="@drawable/h2" />
 
@@ -228,25 +231,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/imageView4"
-                    android:layout_marginTop="320dp"
-                    android:src="@drawable/adicon" />
+                    android:layout_marginTop="410dp"
+                    android:src="@drawable/adicon_bg" />
 
                 <TextView
                     android:id="@+id/ad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imageView8"
+                    android:layout_marginBottom="10dp"
                     android:layout_alignLeft="@+id/fg"
                     android:text="TextView"
                     android:textColor="#000000"
-                    android:textSize="12dp" />
+                    android:textSize="18dp" />
 
                 <ImageView
                     android:id="@+id/ra"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="320dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="410dp"
                     android:layout_toRightOf="@+id/textView1"
                     android:src="@drawable/da" />
 
@@ -254,32 +258,34 @@
                     android:id="@+id/cra"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="320dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="410dp"
                     android:layout_toRightOf="@+id/textView1"
                     android:src="@drawable/at" />
 
                 <View
                     android:id="@+id/view1"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="1dp"
-                    android:layout_marginTop="180dp"
-                    android:background="#666666" />
+                    android:layout_marginTop="220dp"
+                    android:background="#666666" 
+                     android:layout_marginLeft="10dp"/>
 
                 <View
                     android:id="@+id/view2"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
                     android:layout_height="1dp"
-                    android:layout_marginTop="235dp"
+                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="300dp"
                     android:background="#666666" />
 
                 <View
                     android:id="@+id/view3"
-                    android:layout_width="320dp"
+                    android:layout_width="360dp"
+                     android:layout_marginLeft="10dp"
                     android:layout_height="1dp"
-                    android:layout_marginTop="310dp"
+                    android:layout_marginTop="400dp"
                     android:background="#666666" />
 
             </RelativeLayout>
-        
-</RelativeLayout>
+       </RelativeLayout>

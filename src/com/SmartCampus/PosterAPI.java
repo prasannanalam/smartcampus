@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.TargetApi;
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -122,6 +123,9 @@ public class PosterAPI extends Activity {
 	String calName; 
 	 String calId; 
 	 NetworkInfo mWifi;
+	 private int currentX;
+	  private int currentY;
+
 	TextView brk,brktext,fb,fbtext,rsvp,fg,ad,bss,bsstext;
 	ImageView header,br,map,share,brsvp,h,cala,pick;
  ImageView da,sa,ua,cra,click_da,click_more;
@@ -273,47 +277,26 @@ public class PosterAPI extends Activity {
 		   items.close();
 		}*/
 		
-		l1=(ScrollView)findViewById(R.id.l1);
-		
+	/*	l1=(ScrollView)findViewById(R.id.l1);
+		l1.setFillViewport(true);*/
 		l2=(ScrollView)findViewById(R.id.l2);
-		hs=(HorizontalScrollView)findViewById(R.id.hscroll);
+		//hs=(HorizontalScrollView)findViewById(R.id.hscroll);*/
 		 mainView =(RelativeLayout)findViewById(R.id.rlayout);
+		
 		 
-		 ImageView buttonZoomIn = (ImageView)findViewById(R.id.zoomIn);
-		 ImageView buttonZoomOut = (ImageView)findViewById(R.id.zoomOut);
-		 
-
-		 /* buttonZoomOut.setOnClickListener(new OnClickListener() {
-			   
-			   public void onClick(View v) {
-			    zoom(0.5f,0.5f,new PointF(0,0));    
-			   }
-			  });*/
-			  buttonZoomOut.setOnClickListener(new OnClickListener() {
-			   
-			   public void onClick(View v) {
-			    zoom(1f,1f,new PointF(0,0));  
-			   
-			   
-			   }
-			  });
-			  buttonZoomIn.setOnClickListener(new OnClickListener() {
-			   
-			   
-			   public void onClick(View v) {
-			    zoom(1.5f,1.5f,new PointF(0,0));   
-			    findViewById(R.id.l2).getParent().requestDisallowInterceptTouchEvent(false);
-			   }
-			  });
+		
 			  mainView.setOnTouchListener(new OnTouchListener() {
 				   public boolean onTouch(View v, MotionEvent event) {
 				    Log.d(TAG, "mode=DRAG");
 				    switch (event.getAction() & MotionEvent.ACTION_MASK) {
 				    case MotionEvent.ACTION_DOWN:
 				     start.set(event.getX(), event.getY());
+				  currentX = (int) event.getRawX();
+			            currentY = (int) event.getRawY();
+
 				     Log.d(TAG, "mode=DRAG");
 				     mode = DRAG;
-				     findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
+				     //findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
 				     break;
 				    case MotionEvent.ACTION_POINTER_DOWN:
 				     oldDist = spacing(event);
@@ -323,20 +306,28 @@ public class PosterAPI extends Activity {
 				      midPoint(mid, event);
 				      mode = ZOOM;
 				      Log.d(TAG, "mode=ZOOM");
+				     // findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
 				     }
-				     findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
+				     
 				     System.out.println("current time :" + System.currentTimeMillis());
 				     break;// return !gestureDetector.onTouchEvent(event);
 				    case MotionEvent.ACTION_UP:
+				    	//findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
 				    case MotionEvent.ACTION_POINTER_UP:
 				     Log.d(TAG, "mode=NONE");
 				     mode = NONE;
-				     findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
+				     //findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
 				     break;
 				    case MotionEvent.ACTION_MOVE:
-				    	 findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
-				     if (mode == DRAG) {
+				  int x2 = (int) event.getRawX();
+				            int y2 = (int) event.getRawY();
+				            mainView.scrollBy(currentX - x2 , currentY - y2);
+				            currentX = x2;
+				            currentY = y2;
 
+				    	// findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
+				     if (mode == DRAG) {
+				    	// findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
 				     } else if (mode == ZOOM) {
 				      PointF newDist = spacingPoint(event);
 				      float newD = spacing(event);
@@ -346,55 +337,21 @@ public class PosterAPI extends Activity {
 				      Log.e(TAG, "x=" + old[0] + ":&:" + old[2]);
 				      Log.e(TAG, "y=" + old[4] + ":&:" + old[5]);
 				      float scale = newD / oldDist;
+				      
 				      float scalex = newDist.x / oldDistPoint.x;
 				      float scaley = newDist.y / oldDistPoint.y;
+				      
+
+                  
 				      zoom(scale, scale, start);
+				      //findViewById(R.id.l1).getParent().requestDisallowInterceptTouchEvent(false);
 				     }
 				     break;
 				    }
 				    return true;
 				   }
 				  });
-		/* mZoomControls1 = (ZoomControls)findViewById(R.id.zoomControls);
-	       mZoomControls1.show(); 
-	       
-	       mZoomControls1.setOnZoomInClickListener(new
-	    		   ZoomControls.OnClickListener()
-	    		           {
-
-
-	    		                           public void onClick(View v) {
-	    		                                   // TODO Auto-generated method stub
-	    		                                   mZoomControls1.setIsZoomInEnabled
-	    		   (true);
-	    		                                   Log.d("mZoomControls in","mZoomControls");
-	    		                                   mZoomControls1.setIsZoomOutEnabled
-	    		   (true);
-	    		                                   Log.d("mZoomControls out","mZoomControls");
-	    		                           }
-
-
-	    		           });
-
-
-	    		            zoom controls out 
-	    		           mZoomControls1.setOnZoomOutClickListener(new
-	    		   ZoomControls.OnClickListener()
-	    		           {
-
-
-	    		                           public void onClick(View v) {
-	    		                                   // TODO Auto-generated method stub
-	    		                                   mZoomControls1.setIsZoomInEnabled
-	    		   (true);
-	    		                                   Log.d("mZoomControls innnnnnnnn","mZoomControls");
-	    		                                   mZoomControls1.setIsZoomOutEnabled
-	    		   (true);
-	    		                                   Log.d("mZoomControls outttttt","mZoomControls");
-	    		                           }
-
-
-	    		           });*/
+		
 
 		/* Map<String, Integer> map = new HashMap<String, Integer>();
 	        map.put("sph", R.drawable.spicon);*/
@@ -461,15 +418,15 @@ public class PosterAPI extends Activity {
 	        bsstext.setTypeface(fontsub);
 	        
 	        new myList(PosterAPI.this).execute();
-	      l1.setOnTouchListener(new View.OnTouchListener() {
+	     /* l1.setOnTouchListener(new View.OnTouchListener() {
 
                 public boolean onTouch(View v, MotionEvent event) {
-                  
-                    findViewById(R.id.l2).getParent().requestDisallowInterceptTouchEvent(false);
+                	 v.getParent().requestDisallowInterceptTouchEvent(true);
+                    //findViewById(R.id.l2).getParent().requestDisallowInterceptTouchEvent(false);
                     //findViewById(R.id.hscroll).getParent().requestDisallowInterceptTouchEvent(false);
                     return false;
                 }
-            });
+            });*/
            l2.setOnTouchListener(new View.OnTouchListener() {
 
                 public boolean onTouch(View v, MotionEvent event)
@@ -1012,10 +969,10 @@ click_more.setOnClickListener(new View.OnClickListener() {
 	 /** zooming is done from here */
 	 @TargetApi(11)
 	public void zoom(Float scaleX,Float scaleY,PointF pivot){
-	  l1.setPivotX(pivot.x);
-	 l1.setPivotY(pivot.y);  
-	  l1.setScaleX(scaleX);
-	  l1.setScaleY(scaleY);  
+	  mainView.setPivotX(pivot.x);
+	  mainView.setPivotY(pivot.y);  
+	  mainView.setScaleX(scaleX);
+	  mainView.setScaleY(scaleY);  
 	 } 
 	 private float spacing(MotionEvent event) {
 		  // ...
